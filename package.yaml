@@ -1,0 +1,48 @@
+name:                tower-of-hanoi
+version:             0.1.0.0
+github:              "calledtoconstruct/tower_of_hanoi"
+license:             BSD3
+author:              "Joseph Woolley"
+maintainer:          "example@example.com"
+copyright:           "2019 Joseph Woolley"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/calledtoconstruct/tower_of_hanoi#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+executables:
+  tower_of_hanoi_exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - tower_of_hanoi
+
+tests:
+  tower-of-hanoi-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - tower_of_hanoi
